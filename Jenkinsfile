@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t bernardo9999/dp-alpine:latest .'
+        sh 'docker build -t tcampest/dp-alpine:latest .'
       }
     }
     stage('Login') {
