@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub-cred-tcampest')
+    DOCKERHUB_CREDENTIALS = credentials('tcampest-dockerhub')
   }
   stages {
     stage('Build') {
