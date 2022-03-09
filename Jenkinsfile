@@ -3,12 +3,12 @@ pipeline {
   agent any
   
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub-cred-tcampest')
+    DOCKERHUB_CREDENTIALS = credentials('tcampest-dockerhub')
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t tcampest/dp-alpine:latest .'
+        sh 'docker build -t tcampest/dp-alpine-branch1:latest .'
       }
     }
     stage('Login') {
@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push tcampest/dp-alpine:latest'
+        sh 'docker push tcampest/dp-alpine-branch1:latest'
       }
     }
   }
